@@ -37,8 +37,8 @@ public class App {
 
 				System.out.printf("%d번 명언이 등록되었습니다.\n", id);
 				lastId++;
-			}
-			if (cmd.equals("목록")) {
+				continue;
+			} else if (cmd.equals("목록")) {
 				if (wiseSayings.size() == 0) {
 					System.out.println("등록된 명언이 없습니다.");
 					continue;
@@ -48,6 +48,7 @@ public class App {
 					WiseSaying ws = wiseSayings.get(i);
 					System.out.printf("%d  /  %s  /  %s\n", ws.getId(), ws.getAuthor(), ws.getContent());
 				}
+				continue;
 			}
 			if (cmd.startsWith("삭제")) {
 				String[] cmdBits = cmd.split("\\?");
